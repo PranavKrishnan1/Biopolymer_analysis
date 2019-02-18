@@ -1,0 +1,14 @@
+data=read.xlsx("carbohydratepolymers.xlsx",sheetName = "Sheet1",endRow = 24)
+data=data[1:11]
+data1=data[,1:10]
+set.seed(3)
+
+model = train( Observed.yield..mg.g. ~.,data = data1, method = "glm")
+prediction = predict(model,newdata = data1)
+prediction
+data$Predicted.yield.with_glm = prediction
+
+model = train( Observed.yield..mg.g. ~.,data = data1, method = "glm")
+prediction = predict(model,newdata = data1)
+prediction
+data$Predicted.yield.with_glm = prediction
